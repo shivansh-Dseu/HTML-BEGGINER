@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket players score</title>
+        <style>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            border-collapse: collapse;
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        caption {
+            caption-side: top;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #0077ff;
+        }
+
+        thead {
+            background: #0077ff;
+            color: white;
+        }
+
+        th,
+        td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            font-size: 16px;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f9fbff;
+        }
+
+        tbody tr:hover {
+            background: #eaf2ff;
+            transition: 0.3s;
+        }
+
+        td {
+            color: #333;
+            font-size: 15px;
+        }
+
+        @media (max-width: 500px) {
+
+            th,
+            td {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            caption {
+                font-size: 20px;
+            }
+        }
+    </style>
+    
+</head>
+
+<body>
+    <table>
+        <caption>Cricket Players Score</caption>
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Runs</th>
+                <th>Match</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Virat kohli</td>
+                <td>150</td>
+                <td>IPL</td>
+            </tr>
+            <tr>
+                <td>Rohit Sharma</td>
+                <td>200</td>
+                <td>IPL</td>
+            </tr>
+            <tr>
+                <td>MS Dhoni</td>
+                <td>100</td>
+                <td>IPL</td>
+        </tbody>
+    </table>
+</body>
+
+</html>

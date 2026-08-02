@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HTML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 480px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444444;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #333333;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 15px;
+            color: #333333;
+            background-color: #fafafa;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            resize: none;
+            overflow-y: auto;
+            min-height: 90px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #007bff;
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+            outline: none;
+        }
+
+        form div[style*="display: flex"] {
+            display: flex;
+            gap: 8px !important;
+        }
+
+        #country-code {
+            width: 110px;
+        }
+
+        #tel {
+            flex: 1;
+        }
+
+        .plan-options {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .plan-options label,
+        .terms-container label {
+            display: inline-flex;
+            align-items: center;
+            font-weight: normal;
+            cursor: pointer;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .plan-options label:last-child {
+            margin-bottom: 0;
+        }
+
+        .plan-options input[type="radio"],
+        .terms-container input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        .terms-container {
+            display: flex;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .terms-container label {
+            margin-bottom: 0;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"]:active {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form in HTML</h1>
+    <form action="/submit.php" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="Enter name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="country-code">Phone Number:</label><br>
+        <div style="display: flex; gap: 5px;">
+            <!-- Country Code Dropdown -->
+            <select id="country-code" name="country_code" required>
+                <option value="+91" selected>+91 (IN)</option>
+                <option value="+1">+1 (US)</option>
+                <option value="+44">+44 (UK)</option>
+            </select>
+
+            <!-- 10-Digit Only Phone Input -->
+            <input type="tel" id="tel" name="phone" pattern="[0-9]{10}" maxlength="10" inputmode="numeric"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')" placeholder="1234567890" required>
+        </div>
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="DOB">Date of Birth:</label>
+        <input type="date" id="DOB" name="DOB" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label>Subscription Plan:</label><br>
+        <div class="plan-options" style="margin-top: 5px;">
+            <!-- Basic Plan Option -->
+            <label>
+                <input type="radio" name="Subscription" value="basic" required> Basic Plan
+            </label><br>
+
+            <!-- Premium Plan Option -->
+            <label>
+                <input type="radio" name="Subscription" value="premium"> Premium Plan
+            </label><br>
+
+            <!-- VIP Plan Option -->
+            <label>
+                <input type="radio" name="Subscription" value="vip"> VIP Plan
+            </label>
+        </div>
+        <br><br>
+
+        <label for="user-comment">Comment:</label><br>
+        <textarea id="user-comment" name="comment" rows="4" cols="50" placeholder="Type your comment here..."
+            required></textarea>
+        <br><br>
+
+        <div class="terms-container">
+            <input type="checkbox" id="terms" name="terms_agreement" required>
+            <label for="terms">I agree to the Terms and Conditions</label>
+        </div>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,398 @@
+/* ==========================================================================
+   1. Reset & Global Styles
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1c1c1c;
+    background-color: #ffffff;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+/* ==========================================================================
+   2. Header Navigation (Logo Gap Perfectly Fixed)
+   ========================================================================== */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Edge padding reduced to bring logo to extreme left */
+    padding: 1.2rem 3%; 
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.logo img {
+    height: 28px;
+    width: auto;
+    display: block;
+    /* Negative margin removes any invisible image padding around PNG */
+    margin-left: -5px; 
+    filter: brightness(0) invert(1);
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 300;
+    transition: opacity 0.2s ease;
+}
+
+header nav a:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   3. Hero Banner
+   ========================================================================== */
+.hero-section {
+    height: 65vh;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    color: #ffffff;
+}
+
+.hero-section img {
+    width: 260px;
+    height: auto;
+    margin-bottom: 1.5rem;
+    filter: brightness(0) invert(1);
+}
+
+.hero-section p {
+    font-size: 2.2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    line-height: 1.2;
+}
+
+.hero-section input[type="text"] {
+    width: 100%;
+    max-width: 650px;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.05rem;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #363636;
+}
+
+/* ==========================================================================
+   4. Options Cards
+   ========================================================================== */
+.options-section {
+    max-width: 1100px;
+    margin: 3.5rem auto;
+    padding: 0 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.option-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e8e8e8;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.option-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.option-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 1.2rem;
+}
+
+.card-info h3 {
+    font-size: 1.25rem;
+    color: #1c1c1c;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: #4f4f4f;
+}
+
+/* ==========================================================================
+   5. Popular Localities
+   ========================================================================== */
+.locality-section {
+    max-width: 1100px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.locality-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #1c1c1c;
+    margin-bottom: 2rem;
+}
+
+.locality-section h2 span {
+    font-weight: 600;
+}
+
+.locality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.2rem;
+}
+
+.locality-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid #e8e8e8;
+    border-radius: 9px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    background-color: #ffffff;
+}
+
+.locality-card:hover {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.locality-card h3 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #1c1c1c;
+}
+
+.locality-card p {
+    font-size: 0.9rem;
+    color: #828282;
+    margin-top: 0.2rem;
+}
+
+.locality-card .arrow {
+    font-size: 1.5rem;
+    color: #4f4f4f;
+}
+
+.see-more {
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* ==========================================================================
+   6. App Download Section
+   ========================================================================== */
+.app-section {
+    background-color: #fffbfb;
+    padding: 4rem 1.5rem 3.5rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.app-container {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.app-image img {
+    width: 240px;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.app-content h2 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #1c1c1c;
+    margin-bottom: 0.5rem;
+}
+
+.app-subtext {
+    font-size: 1rem;
+    color: #696969;
+    margin-bottom: 2rem;
+}
+
+.app-store-badges {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.badge-link img {
+    height: 48px;
+    width: auto;
+    border-radius: 6px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.badge-link img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.scroll-prompt {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #4f4f4f;
+    font-size: 1.05rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.chevron-down {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(5px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+/* ==========================================================================
+   7. Footer
+   ========================================================================== */
+footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #e8e8e8;
+    color: #4f4f4f;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   8. Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 900px) {
+    .app-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .app-content {
+        align-items: center;
+    }
+
+    .app-store-badges {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        background-color: #1c1c1c;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+
+    header nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section {
+        height: auto;
+        padding: 4rem 1.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.5rem;
+    }
+
+    .hero-section img {
+        width: 180px;
+    }
+
+    .locality-grid {
+        grid-template-columns: 1fr;
+    }
+}
